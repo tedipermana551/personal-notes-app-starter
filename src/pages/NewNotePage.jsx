@@ -1,6 +1,14 @@
 import React from "react";
 import { addNote } from "../utils/local-data";
 import { MdDoneOutline } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
+
+function NewNoteWrapper(Component) {
+    return function (props) {
+        const navigate = useNavigate();
+        return <Component {...props} navigate={navigate} />
+    }
+}
 
 class NewNotePage extends React.Component {
     constructor(props) {
@@ -35,7 +43,7 @@ class NewNotePage extends React.Component {
     onSubmitEventHandler(event) {
         event.preventDefault();
         addNote(this.state);
-        navigate('/');
+        this.props.navigate('/');
     }
 
     render() {
@@ -62,4 +70,4 @@ class NewNotePage extends React.Component {
     }
 }
 
-export default NewNotePage;
+export default NewNoteWrapper(NewNotePage);
