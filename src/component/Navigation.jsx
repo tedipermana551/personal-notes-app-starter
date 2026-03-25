@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import { IoMdArchive, IoMdAddCircle } from "react-icons/io";
+import { IoMdArchive, IoMdAddCircle, IoMdLogOut} from "react-icons/io";
 
-function Navigation() {
+function Navigation({logout,name}) {
     return (
         <nav className="navigation">
             <ul>
             <li><Link to="/archive"><IoMdArchive /></Link></li>
             <li><Link to="/notes/new"><IoMdAddCircle /></Link></li>
+            <li><button onClick={logout}><IoMdLogOut/>{name}</button></li>
             </ul>
         </nav>
     );

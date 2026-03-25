@@ -55,8 +55,26 @@ header h1 {
 
 header .navigation ul li {
   display: inline-block;
-  font-size: 40px;
-  margin: 0 8px;
+  font-size: 30px;
+  margin: 0 9px;
+}
+
+header .global-navigation ul li {
+  display: inline-block;
+  font-size: 30px;
+  margin: 0 9px;
+  cursor: pointer;
+}
+
+header .navigation ul li button {
+  background-color: transparent;
+  border : 0;
+  padding: 0;
+  font-size: 30px;
+}
+
+header .navigation ul li button:hover {
+  color: var(--primary);
 }
 
 main {
@@ -67,7 +85,6 @@ main {
 }
 
 button {
-  margin: 7px;
   padding: 4px 16px;
   border: 2px solid var(--on-background);
   border-radius: 8px;
@@ -124,6 +141,12 @@ button:hover {
   text-overflow: ellipsis;
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
+}
+
+.note-item__action {
+  margin-top: 16px;
+  display:flex;
+  gap: 8px;
 }
 
 .detail-page {
@@ -273,6 +296,10 @@ button:hover {
   background-color: var(--on-background);
   color: var(--background);
   cursor: pointer;
+}
+
+.input-login button:hover, .input-register button:hover {
+  background-color:var(--primary);
 }
 
 .button-logout {

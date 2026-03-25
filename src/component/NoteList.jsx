@@ -1,10 +1,15 @@
 import React from 'react';
 import NoteItem from './NoteItem';
+import LocaleContext from '../contexts/LocaleContext';
 
 function NoteList({ notes, onArchive, onDelete }) {
+    const { locale } = React.useContext(LocaleContext);
+
     if (notes.length === 0) {
         return (
-            <p className="notes-list__empty-message">Tidak ada catatan</p>
+            <p className="notes-list__empty-message">
+                {locale === 'id' ? 'Tidak ada catatan' : 'No notes available'}
+            </p>
         );
     };
 
